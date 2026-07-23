@@ -39,9 +39,9 @@ export default function App() {
       <h1 style={{ textAlign: 'center', color: '#1E293B', marginBottom: '8px' }}>חננא"ל 🌤️</h1>
       <p style={{ textAlign: 'center', color: '#64748B', fontSize: '14px', marginTop: 0 }}>חזאי נתוני נקודה אקלימיים לשטח - חיזוי יא"ן עתידי</p>
 
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '20px' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginTop: '20px' }}>
       <div>
-        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '4px' }}>עיר / בסיס / נקודה:</label>
+        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '6px', textAlign: 'center', color: '#475569' }}>עיר / בסיס / נקודה:</label>
         <input 
           type="text" 
           value={city} 
@@ -49,17 +49,21 @@ export default function App() {
           required 
           style={{ 
             width: '100%', 
-            padding: '8px', 
-            borderRadius: '6px', 
-            border: '1px solid #ccc', 
+            padding: '10px', 
+            borderRadius: '8px', 
+            border: '1px solid #CBD5E1', 
+            backgroundColor: '#FFFFFF',
+            color: '#1E293B',
+            fontSize: '16px',
             boxSizing: 'border-box',
-            textAlign: 'center' 
+            textAlign: 'center',
+            WebkitAppearance: 'none'
           }}
         />
       </div>
 
       <div>
-        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '4px' }}>תאריך:</label>
+        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '6px', textAlign: 'center', color: '#475569' }}>תאריך:</label>
         <div dir="ltr">
           <input 
             type="date" 
@@ -68,20 +72,22 @@ export default function App() {
             required 
             style={{ 
               width: '100%', 
-              padding: '8px', 
-              borderRadius: '6px', 
-              border: '1px solid #ccc', 
+              padding: '10px', 
+              borderRadius: '8px', 
+              border: '1px solid #CBD5E1', 
+              backgroundColor: '#FFFFFF',
+              color: '#1E293B',
+              fontSize: '16px',
               boxSizing: 'border-box',
               textAlign: 'center',
-              display: 'flex',
-              justifyContent: 'center'
+              WebkitAppearance: 'none'
             }}
           />
         </div>
       </div>
 
       <div>
-        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '4px' }}>שעה:</label>
+        <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '6px', textAlign: 'center', color: '#475569' }}>שעה:</label>
         <div dir="ltr">
           <input 
             type="time" 
@@ -90,13 +96,15 @@ export default function App() {
             required 
             style={{ 
               width: '100%', 
-              padding: '8px', 
-              borderRadius: '6px', 
-              border: '1px solid #ccc', 
+              padding: '10px', 
+              borderRadius: '8px', 
+              border: '1px solid #CBD5E1', 
+              backgroundColor: '#FFFFFF',
+              color: '#1E293B',
+              fontSize: '16px',
               boxSizing: 'border-box',
               textAlign: 'center',
-              display: 'flex',
-              justifyContent: 'center'
+              WebkitAppearance: 'none'
             }}
           />
         </div>
@@ -105,7 +113,17 @@ export default function App() {
       <button 
         type="submit" 
         disabled={loading}
-        style={{ padding: '10px', backgroundColor: '#2563EB', color: '#fff', border: 'none', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer', marginTop: '10px' }}
+        style={{ 
+          padding: '12px', 
+          backgroundColor: '#2563EB', 
+          color: '#fff', 
+          border: 'none', 
+          borderRadius: '8px', 
+          fontSize: '16px',
+          fontWeight: 'bold', 
+          cursor: 'pointer', 
+          marginTop: '6px' 
+        }}
       >
         {loading ? 'מחשב תחזית...' : 'חשב יא"ן'}
       </button>
@@ -119,7 +137,7 @@ export default function App() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '14px' }}>
             <div>טמפרטורה: <strong>{result.temp}°C</strong></div>
             <div>לחות יחסית: <strong>{result.humidity}%</strong></div>
-            <div>טמפ' לחה ($T_w$): <strong>{result.tw}°C</strong></div>
+            <div>טמפ' לחה (T<sub>w</sub>): <strong>{result.tw}°C</strong></div>
             <div>ערך יא"ן: <strong style={{ fontSize: '18px', color: result.status.color }}>{result.di}</strong></div>
           </div>
           <div style={{ marginTop: '12px', padding: '6px 12px', borderRadius: '4px', backgroundColor: result.status.color, color: '#fff', textAlign: 'center', fontWeight: 'bold' }}>
